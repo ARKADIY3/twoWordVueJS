@@ -29,12 +29,13 @@
 
 
     <div>
-        <input type="text" @keyup.enter.shift="addItem($event)" ref="myInput">
+        <input type="text" @keyup.enter.stop="addItem($event)" ref="myInput">
     </div>
 
         <ul v-if="items.length">
-        <li v-for="(item,i) in items"
-        v-on:click="items.splice(i, 1)"
+        <li
+        v-for="(item,i) in items"
+        v-on:click="remove(i)"
         :key="item"
         >
             <strong>{{ item }}</strong>

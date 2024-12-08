@@ -6,6 +6,9 @@ Vue.createApp({
             addItem() {
                 this.items.unshift(this.$refs.myInput.value)
                 this.$refs.myInput.value = ''
+            },
+            remove(i){
+                this.items.splice(i, 1)
             }
         },
         computed: {
